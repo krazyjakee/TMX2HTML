@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>TMX2HTML</title>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="game"></div>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="tmx2html.js"></script>
+    <script type="text/javascript">
+      window.onload = function(){
+          var Map = new tmx2html();
+          Map.load('testmap', 'testmap.json', function(){
+              $('#game').html(Map.render('testmap'));
+          });
+      }
+    </script>
+  </body>
+</html>
